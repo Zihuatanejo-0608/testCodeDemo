@@ -1,0 +1,9 @@
+taskName,resourceId,storageId,imageName,message
+,99,99,172.17.47.86:8090/library/deeplearning-nd:auto,taskName 不能为空
+str,777,99,172.17.47.86:8090/library/deeplearning-nd:auto,resourceId 参数有误，不存在该配置信息
+str,,99,172.17.47.86:8090/library/deeplearning-nd:auto,resourceId 不能为空
+str,99,888,172.17.47.86:8090/library/deeplearning-nd:auto,storageId 参数有误，不存在该存储信息
+str,99,,172.17.47.86:8090/library/deeplearning-nd:auto,storageId 不能为空
+str,99,99,,imageName 不能为空
+str,99,99,AABBCC,镜像:AABBCC不存在
+str,99,99,172.17.47.86:8090/library/deeplearning-nd:auto,创建成功

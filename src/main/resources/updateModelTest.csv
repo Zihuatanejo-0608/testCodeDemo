@@ -1,0 +1,5 @@
+id,name,description,message
+,str,AABB,id 不能为空
+str,,CCDD,imageName 不能为空
+49977553311,str,EEFF,模型不存在，无法修改
+str,str,GGHH,修改成功

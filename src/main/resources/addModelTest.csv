@@ -1,0 +1,5 @@
+name,type,description,message
+,test_name,AABB,imageName 不能为空
+str,,CCDD,type 不能为空
+str,test_name,EEFF,添加成功
+str,test_name,GGHH,模型名不可重复

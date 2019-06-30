@@ -1,4 +1,4 @@
-package testTools;
+package tools;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -21,7 +21,7 @@ import java.net.URLDecoder;
  *
  * Http测试框架
  */
-public class HttpMethod{
+public class HttpMethod {
     public static String httpPost(String url, String parameter, String headerName,String headerValue,boolean noNeedResponse) throws Exception{
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -35,7 +35,7 @@ public class HttpMethod{
             //创建http post请求对象
             HttpPost httpPost = new HttpPost(url);
             //设置请求和传输超时时间
-            RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(20000).setConnectTimeout(20000).build();
+            RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(9000).setConnectTimeout(10000).build();
             httpPost.setConfig(requestConfig);
             httpPost.setHeader(headerName,headerValue);
             if(null != parameter){
@@ -86,7 +86,7 @@ public class HttpMethod{
             //HttpPost httpPost = new HttpPost(url);
             HttpGet httpGet = new HttpGet(url);
             //设置请求和传输超时时间
-            RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(10000).setConnectTimeout(9000).build();
+            RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(10000).setConnectTimeout(5000).build();
             httpGet.setConfig(requestConfig);
             httpGet.setHeader(headerName,headerValue);
 
