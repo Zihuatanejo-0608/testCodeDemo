@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+
+            <!-- oracle -->
+            <!--<dataSource type="POOLED">-->
+                <!--<property name="driver" value="oracle.jdbc.driver.OracleDriver" />-->
+                <!--<property name="url" value="jdbc:oracle:thin:@172.17.xx.xx:1521/test20" />-->
+                <!--<property name="username" value="marketing" />-->
+                <!--<property name="password" value="bestpay" />-->
+            <!--</dataSource>-->
+
+            <!-- mysql -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://172.17.xx.xx:3306/bigdata" />
+                <property name="username" value="xxx" />
+                <property name="password" value="xxx" />
+
+                <!--<property name="autoDelimitKeywords" value="false" />-->
+                <!--<property name="beginningDelimiter" value="`" />-->
+                <!--<property name="endingDelimiter" value="`" />-->
+            </dataSource>
+
+        </environment>
+    </environments>
+
+
+    <!--指向到下级的配置文件,下级配置文件中保存具体的SQL-->
+    <mappers>
+        <mapper resource="ServiceKey.xml"/>
+    </mappers>
+
+
+</configuration>

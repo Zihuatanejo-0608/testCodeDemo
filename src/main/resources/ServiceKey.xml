@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ServiceKey_Rela_Info">
+
+
+    <select id="keyRela" parameterType="BasicData.dataEntity.T_SERVICE_KEY_RELA" resultType="BasicData.dataEntity.T_SERVICE_KEY_RELA">
+        select * from t_service_key_rela where inst_interface_type = #{type};
+    </select>
+
+    <select id="keyInfo" parameterType="BasicData.dataEntity.T_SERVICE_KEY_INFO" resultType="BasicData.dataEntity.T_SERVICE_KEY_INFO">
+        select * from t_service_key_info where `key` = #{`key`}
+    </select>
+
+
+</mapper>
+

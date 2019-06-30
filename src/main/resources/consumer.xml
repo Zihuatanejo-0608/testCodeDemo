@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+       default-lazy-init="false">
+
+    <dubbo:application name="consumer-of-YxljConsumer-app"  />
+
+    <!--46-->
+    <dubbo:registry protocol="zookeeper"  id="zookeeper" address="zookeeper://172.17.xx.xx:2181"/>
+
+    <!--大数据查询接口-->
+    <dubbo:reference
+            id="iDubboQueryApi"
+            interface="com.xx.bigdata.actual.api.IDubboQueryApi"
+            retries="0"
+            timeout="3000"
+            check="false"/>
+
+
+
+</beans>
