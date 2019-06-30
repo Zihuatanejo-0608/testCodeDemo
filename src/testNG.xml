@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite">
+    <test name="testNGDemo">
+        <!--包维度执行-->
+        <!--<packages>-->
+        <!--<package name="testNGDemo" />-->
+        <!--</packages>-->
+
+        <!-- ********************************************************-->
+
+        <!--类维度执行-->
+        <classes>
+            <class name="aiPass.aiTest" />
+        </classes>
+
+        <!-- ********************************************************-->
+
+        <!--方法维度执行-->
+        <!--<classes>-->
+        <!--<class name="executionTest.opTest">-->
+        <!--<methods>-->
+        <!--<include name="doMinusTest"/>-->
+        <!--&lt;!&ndash;<include name="doTestTwo"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<include name="doTestThree"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<include name="doTestFour"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<include name="doTestFive"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<include name="doTest"/>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;排除&ndash;&gt;-->
+        <!--&lt;!&ndash;<exclude name="doTest"></exclude>&ndash;&gt;-->
+
+        <!--</methods>-->
+        <!--</class>-->
+        <!--</classes>-->
+
+        <!-- ********************************************************-->
+
+        <!--分组维度,包含/排除-->
+        <!--P.S：执行顺序会安方法名字母降序排序-->
+        <!--P.S：执行顺序会安方法名字母降序排序-->
+        <!--分组会导致BeforeClass不工作,解决方案1.@BeforeClass(alwaysRun = true)，解决方案2.@Beforeclass上也加groups属性，并和对应的@Test放入同一组-->
+        <!--<groups>-->
+        <!--<run>-->
+        <!--<include name="OddNum" />-->
+        <!--&lt;!&ndash;<exclude name="EvenNum"></exclude>&ndash;&gt;-->
+        <!--</run>-->
+        <!--</groups>-->
+        <!--<classes>-->
+        <!--<class name="testB" />-->
+        <!--</classes>-->
+
+    </test>
+</suite>
