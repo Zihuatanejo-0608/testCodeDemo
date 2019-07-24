@@ -15,12 +15,12 @@ public class RedisTest {
     public static String redisData(String key){
         try{
             Set<HostAndPort> nodes = new HashSet<HostAndPort>();
-            nodes.add(new HostAndPort("172.17.xx.11",36379));
-            nodes.add(new HostAndPort("172.17.xx.11",36381));
-            nodes.add(new HostAndPort("172.17.xx.12",36379));
-            nodes.add(new HostAndPort("172.17.xx.12",36381));
-            nodes.add(new HostAndPort("172.17.xx.13",36379));
-            nodes.add(new HostAndPort("172.17.xx.13",36381));
+            nodes.add(new HostAndPort("172.17.qq.11",36379));
+            nodes.add(new HostAndPort("172.17.qq.11",36381));
+            nodes.add(new HostAndPort("172.17.qq.12",36379));
+            nodes.add(new HostAndPort("172.17.qq.12",36381));
+            nodes.add(new HostAndPort("172.17.qq.13",36379));
+            nodes.add(new HostAndPort("172.17.qq.13",36381));
 
             JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
             jedisPoolConfig.setMaxTotal(10);//最大连接数

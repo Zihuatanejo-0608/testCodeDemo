@@ -1,20 +1,25 @@
 package login;
 
-import com.alibaba.fastjson.JSONObject;
+import cn.hutool.json.JSONObject;
+import data.InitLogin;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import tools.CSVData;
-import tools.HttpMethod;
-import tools.RedisTest;
+import tools.HuToolHttpUtil;
 
 import java.util.Iterator;
 import java.util.Map;
 
 /**
  * Created by andy on 2019/6/11.
+ *
+ * 登陆模块
+ *
  */
 public class LoginTest {
+
+    private static String urlHead = "http://101.qq.118.202:9999/";
 
     @DataProvider(name = "loginTest")
     public static Iterator<Object[]> testData() throws Exception{
@@ -23,34 +28,28 @@ public class LoginTest {
 
     @Test(dataProvider = "loginTest")
     public void loginTest(Map<String,String> map) throws Exception{
-        boolean flag = false;
-        String url = "http://172.17.xx.85:30000/auth/login";
-
+        String url = urlHead + "auth/login";
         JSONObject request = new JSONObject();
-
+        //String encryption = InitLogin.encryption(password);
         request.put("username",map.get("username"));
         if (map.get("password").equals("")){
             request.put("password",null);
         }else {
-            request.put("password",map.get("password"));
+            String encryption = InitLogin.encryption(map.get("password"));
+            request.put("password",encryption);
         }
-
         //发送验证码
-        String verifyCodeKey = VerifyCodeData.verifyCodeData();
+        String verifyCodeKey = InitLogin.verifyCodeData();
         request.put("verifyCodeKey",verifyCodeKey);//秘钥key
         String k = "verifyCode:" + verifyCodeKey;//验证码key
         //从redis获取验证码
-        String v = RedisTest.redisData(k);
+        //String v = RedisTest.redisData(k);
+        String v = InitLogin.redisValue(k);
         request.put("verifyCodeInfo",v);//验证码
 
-        System.out.println("请求对象:" + request.toString());
-        String respone = HttpMethod.httpPost(url,request.toString(),"","",flag);
-
-        JSONObject obj  = JSONObject.parseObject(respone);
-        String actualMessage = (String) obj.get("message");
-
+        JSONObject respone = HuToolHttpUtil.post(url, "", "", request);
+        String actualMessage = (String) respone.get("message");
         System.out.println("预期结果:" + map.get("message") + "\n" + "实际结果:" + actualMessage);
-
         //断言
         Assert.assertEquals(actualMessage,map.get("message"));
 
