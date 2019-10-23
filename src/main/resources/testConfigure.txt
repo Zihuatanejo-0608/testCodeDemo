@@ -1,0 +1,8 @@
+urlHead=http://101.91.118.xxx:9999/
+headerName=Authorization
+admin=admin@qq.com.cn
+adminPwd=admin@12345
+ckm=chukaimin-it@qq.com.cn
+ckmPwd=chukaimin@12345
+jy=jinyong-sj@qq.com.cn
+jyPwd=jinyong@12345

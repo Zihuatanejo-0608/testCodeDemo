@@ -1,8 +1,9 @@
 package tools;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.*;
-import java.util.regex.Matcher;
 
 /**
  * Created by andy on 2019/6/6.
@@ -15,12 +16,9 @@ public class CSVData implements Iterator<Object[]> {
     int curRowNo = 0;//当前行数
     String columnName[];//列名
 
-    public CSVData(String fileName) throws IOException {
+    public CSVData(String fileName) throws Exception {
 
-        File file = new File(".");
-        String path = ".src.main.resources.";
-        String absolutePath = file.getCanonicalPath() + path.replaceAll("\\.", Matcher.quoteReplacement("\\")) + fileName;
-        System.out.println("测试数据路径:" +absolutePath);
+        String absolutePath = ToolsUnit.getPath(fileName);
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(absolutePath),"GBK"));
         while (bufferedReader.ready()){
