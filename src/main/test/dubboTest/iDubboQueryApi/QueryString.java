@@ -2,7 +2,6 @@ package dubboTest.iDubboQueryApi;
 
 import dataEntity.T_SERVICE_KEY_INFO;
 import dataEntity.T_SERVICE_KEY_RELA;
-import testTools.SelectKeyRela;
 import com.alibaba.fastjson.JSONObject;
 import com.xx.bigdata.actual.api.IDubboQueryApi;
 import com.xx.bigdata.actual.api.model.RequestStringDO;

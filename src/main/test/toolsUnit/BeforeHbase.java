@@ -1,4 +1,4 @@
-package testTools;
+package toolsUnit;
 
 import org.testng.annotations.Test;
 

@@ -20,12 +20,11 @@ public class Tools {
         return String.valueOf(r);
     }
 
-//    @Test
-//    //统计类中含有多少个方法
-//    public void sumClass() {
-//        int length = lei.class.getMethods().length;
-//        System.out.println(length);
-//    }
+    //统计类中含有多少个方法
+    public void sumClass() {
+        int length = Tools.class.getMethods().length;
+        System.out.println(length);
+    }
 
     public static String filePath(String fileName) throws Exception{
         File file = new File(".");
@@ -47,7 +46,20 @@ public class Tools {
 
     }
 
+    public static String getPath(String fileName) throws Exception {
+        String absolutePath = FileUtil.getAbsolutePath(fileName);
+        System.out.println("数据资源路径:" + absolutePath);
+        return absolutePath;
+    }
 
+    public static String getTxtStr(String fileName) throws Exception{
+        String absolutePath = FileUtil.getAbsolutePath(fileName);
+        String str = FileUtil.readString(absolutePath, Charset.defaultCharset());
+        System.out.println(str);
+//        JSON json = JSONUtil.readJSON(new File(absolutePath), Charset.defaultCharset());
+//        System.out.println(json.toString());
+        return str;
+    }
 
 
 }

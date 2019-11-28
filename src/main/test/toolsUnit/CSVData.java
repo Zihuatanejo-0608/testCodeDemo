@@ -1,4 +1,4 @@
-package tools;
+package toolsUnit;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -18,7 +18,7 @@ public class CSVData implements Iterator<Object[]> {
 
     public CSVData(String fileName) throws Exception {
 
-        String absolutePath = ToolsUnit.getPath(fileName);
+        String absolutePath = Tools.getPath(fileName);
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(absolutePath),"GBK"));
         while (bufferedReader.ready()){

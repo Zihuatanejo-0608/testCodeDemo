@@ -1,4 +1,4 @@
-package testTools;
+package toolsUnit;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.*;

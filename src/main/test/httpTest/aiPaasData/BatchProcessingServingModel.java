@@ -1,4 +1,4 @@
-package aiPaasTest.aiPaasData;
+package httpTest.aiPaasData;
 
 import aiPaasTest.loginService.Configure;
 import aiPaasTest.loginService.LoginTest;
